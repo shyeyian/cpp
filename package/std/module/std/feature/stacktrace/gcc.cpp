@@ -1,5 +1,5 @@
 module std:feature.stacktrace.gcc;
-import    :compiler;
+import    :core;
 import compiler;
 import system;
 

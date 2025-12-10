@@ -1,15 +1,18 @@
-export module anonymous:basic.algorithm.range;
-import                 :basic.concepts;
+export module anonymous.basic:constexprs.range;
+import                       :concepts;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     constexpr random_access_range auto range ( integral auto );
     constexpr random_access_range auto range ( integral auto, integral auto );
     constexpr random_access_range auto range ( integral auto, integral auto, integral auto );
+}
 
 
-    
+
+namespace anonymous::inline basic
+{   
     constexpr random_access_range auto range ( integral auto high )
     {
         return std::views::iota(1, high + 1);

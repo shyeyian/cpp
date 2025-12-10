@@ -1,8 +1,5 @@
-module;
-#include <csignal>
-
-export module anonymous:basic.error.signal;
-import                 :basic.error.exception;
+export module anonymous.error:signal;
+import                       :exception;
 import        std;
 
 export namespace anonymous
@@ -13,30 +10,23 @@ export namespace anonymous
     };
 
     inline auto signal_initializer = signal_initializer_type();
+}
 
 
 
+namespace anonymous
+{
     signal_initializer_type::signal_initializer_type ( )
     {
         // standard
-        #ifdef SIGFPE
-        std::signal(SIGFPE,    [] (int s) { throw signal("SIGFPE (erroneous arithmetic operation)"); });
-        #endif
-        #ifdef SIGILL
-        std::signal(SIGILL,    [] (int s) { throw signal("SIGILL (illegal instruction)"); });
-        #endif
-        #ifdef SIGINT
-        std::signal(SIGINT,    [] (int s) { throw signal("SIGINT (terminal interrupt signal)"); });
-        #endif
-        #ifdef SIGSEGV
-        std::signal(SIGSEGV,   [] (int s) { throw signal("SIGSEGV (invalid memory reference)"); });
-        #endif
-        #ifdef SIGTERM
-        std::signal(SIGTERM,   [] (int s) { throw signal("SIGTERM (termination signal)"); });
-        #endif
+        std::signal(SIGFPE_,    [] (int s) { throw signal("SIGFPE (erroneous arithmetic operation)"); });
+        std::signal(SIGILL_,    [] (int s) { throw signal("SIGILL (illegal instruction)"); });
+        std::signal(SIGINT_,    [] (int s) { throw signal("SIGINT (terminal interrupt signal)"); });
+        std::signal(SIGSEGV_,   [] (int s) { throw signal("SIGSEGV (invalid memory reference)"); });
+        std::signal(SIGTERM_,   [] (int s) { throw signal("SIGTERM (termination signal)"); });
 
         // posix
-        #ifdef SIGALRM
+        if constexpr (SIGALRM_ != 0)
         std::signal(SIGALRM,   [] (int s) { throw signal("SIGALRM (alarm clock)"); });
         #endif
         #ifdef SIGBUS

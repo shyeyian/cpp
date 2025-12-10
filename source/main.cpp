@@ -1,9 +1,7 @@
+import anonymous;
 import std;
 
 int main ( )
 {
-    int a;
-    int = ;
-    std::vector<int>() |
-    std::ranges::to<std::map<int,int>>();
+    throw anonymous::runtime_error("hello, world {} {} {}!", "yya", 2, 3);
 }

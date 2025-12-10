@@ -1,5 +1,5 @@
 export module std:feature.sender;
-import           :compiler;
+import           :core;
 export import beman;
 
 export namespace std

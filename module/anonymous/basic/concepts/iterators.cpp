@@ -1,7 +1,7 @@
-export module anonymous:basic.concepts.iterators;
+export module anonymous.basic:concepts.iterators;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     template < class type > concept input_iterator           = std::input_iterator        <type>;
     template < class type > concept forward_iterator         = std::forward_iterator      <type>;

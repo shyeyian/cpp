@@ -1,8 +1,10 @@
-export module anonymous:basic.concepts.tuples;
+export module anonymous.basic:concepts.tuples;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
-    template < class type >            constexpr int tuple_size    = std::tuple_size<type>::value;
-    template < int index, class type > using         tuple_element = std::tuple_element<(index>=0) ? size_t(index-1) : size_t(index+int(std::tuple_size<type>::value)),type>::type;
+    template < class type >            
+    constexpr int tuple_size = std::tuple_size<type>::value;
+    template < int index, class type > 
+    using tuple_element = std::tuple_element<(index>=0) ? size_t(index-1) : size_t(index+int(std::tuple_size<type>::value)),type>::type;
 }

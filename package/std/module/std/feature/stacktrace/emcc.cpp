@@ -1,5 +1,5 @@
 module std:feature.stacktrace.emcc;
-import    :compiler;
+import    :core;
 import compiler;
 
 namespace std

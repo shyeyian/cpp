@@ -1,7 +1,7 @@
-export module anonymous:basic.concepts.traits;
+export module anonymous.basic:concepts.traits;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     template < class type >                               constexpr bool is_abstract                = std::is_abstract               <type>                 ::value;
     template < class type >                               constexpr bool is_aggregate               = std::is_aggregate              <type>                 ::value;

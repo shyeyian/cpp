@@ -5,9 +5,6 @@ import           :feature.stacktrace.emcc;
 import           :feature.stacktrace.gcc;
 #endif
 
-
-
-
 export namespace std
 {
     class stacktrace_entry

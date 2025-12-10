@@ -2,82 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "debug.clean",
-            "group": "none",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/clean.py --type=debug"
-        },
-        {
-            "label": "debug.build",
-            "group": "none",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/build.py --type=debug"
-        },
-        {
-            "label": "debug.test",
-            "group": "test",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/test.py --type=debug"
-        },
-        {
-            "label": "debug.run",
-            "group": "test",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "./binary/debug/source/main"
-        },
-        {
             "label": "debug",
             "group": "build",
             "type": "shell",
-            "problemMatcher": [],
-            "dependsOn": [
-                "debug.build",
-                "debug.run"
-            ],
-            "dependsOrder": "sequence",
-        },
-        {
-            "label": "release.clean",
-            "group": "none",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/clean.py --type=release"
-        },
-        {
-            "label": "release.build",
-            "group": "none",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/build.py --type=release"
-        },
-        {
-            "label": "release.test",
-            "group": "test",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "python ./tool/test.py --type=release"
-        },
-        {
-            "label": "release.run",
-            "group": "test",
-            "type": "shell",
-            "problemMatcher": [],
-            "command": "./binary/release/source/main"
+            "command": "cppmake --type=debug"
         },
         {
             "label": "release",
             "group": "build",
             "type": "shell",
-            "problemMatcher": [],
-            "dependsOn": [
-                "release.build",
-                "release.run"
-            ],
-            "dependsOrder": "sequence"
+            "command": "cppmake --type=release"
         }
     ]
 }

@@ -1,7 +1,7 @@
-export module anonymous:basic.concepts.operators;
+export module anonymous.basic:concepts.operators;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     template < class type >               concept plusable        = requires { std::declval<type >() +   std::declval<type >(); };
     template < class type1, class type2 > concept plusable_to     = requires { std::declval<type1>() +   std::declval<type2>(); };

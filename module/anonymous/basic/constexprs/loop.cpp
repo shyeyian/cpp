@@ -1,16 +1,19 @@
-export module anonymous:basic.algorithm.loop;
-import                 :basic.algorithm.range;
+export module anonymous.basic:constexprs.loop;
+import                       :constexprs.range;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     template < int min, int max, int stride = 1 > constexpr void for_constexpr     ( auto&& );
     template < int min, int max, int stride = 1 > constexpr bool all_of_constexpr  ( auto&& );
     template < int min, int max, int stride = 1 > constexpr bool any_of_constexpr  ( auto&& );
     template < int min, int max, int stride = 1 > constexpr bool none_of_constexpr ( auto&& );
+}
 
 
 
+namespace anonymous::inline basic
+{
     template < int min, int max, int stride >
     constexpr void for_constexpr ( auto&& ops )
     {

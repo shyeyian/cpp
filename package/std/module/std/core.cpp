@@ -1,5 +1,5 @@
 module;
 #include <include>
 
-export module std:compiler;
+export module std:core;
 #include <export>

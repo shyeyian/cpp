@@ -1,7 +1,7 @@
-export module anonymous:basic.concepts.core;
+export module anonymous.basic:concepts.core;
 import        std;
 
-export namespace anonymous
+export namespace anonymous::inline basic
 {
     template < class type >                                    concept default_initializable           = std::is_default_constructible          <type>::value; // std::default_initializable checks operator new, which does not accept cv-qualified ones.
     template < class type >                                    concept nothrow_default_initializable   = std::is_nothrow_default_constructible  <type>::value;
@@ -37,5 +37,5 @@ export namespace anonymous
     template < class type1, class type2 >                      concept nothrow_swappable_with          = std::is_nothrow_swappable_with         <type1,type2>::value;
     template < class type1, class type2 >                      concept common_with                     = std::common_with                       <type1,type2>;
     template < class type1, class type2 >                      concept common_reference_with           = std::common_reference_with             <type1,type2>;
-    template < class type1, class type2 >                      concept layout_compatible_with          = std::is_layout_compatible              <type1,type2>::value; 
+ // template < class type1, class type2 >                      concept layout_compatible_with          = std::is_layout_compatible              <type1,type2>::value; 
 }
