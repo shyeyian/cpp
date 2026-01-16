@@ -1,6 +1,16 @@
 from cppmakelib import *
 
-package.define_macros = {
+self.require_packages |= {
+    Package("beman"),
+    Package("eigen"),
+    Package("clblast"),
+    Package("compiler"),
+    Package("eigen"),
+    Package("icu"),
+    Package("jpeg"),
+}
+
+self.define_macros |= {
     "abstract"   : ":",
     "extends"    : ":",
     "in"         : ":",
@@ -11,11 +21,5 @@ package.define_macros = {
 def make():
     Source("main").compile()
 
-def test():
-    for file in iterate_dir("source/test", recursive=True):
-        Executable(Source(file=file).name).execute()
-
-def clangd():
-    compiler = Clang()
-    for file in iterate_dir("module"):
-        Module(file=file).precompile()
+def pybind():
+    Source("pybind").compile()

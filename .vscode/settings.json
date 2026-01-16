@@ -3,5 +3,5 @@
         "--compile-commands-dir=binary/cache",
         "--header-insertion=never"
     ],
-    "cppsarif.sarifDirectory": "binary/cache"
+    "cppsarif.sarifDirectory": "test"
 }

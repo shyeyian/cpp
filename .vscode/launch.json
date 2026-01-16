@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "binary/source/main",
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+        },
+        {
+            "name": "lldb",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "binary/source/main",
+        },
+    ]
+}
