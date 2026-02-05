@@ -1,13 +1,10 @@
 from cppmakelib import *
 
+self.depend_packages = []
+
 def build():
-    include(
-        package=package,
-        dir    ="Eigen",
-        relpath="Eigen"
-    )
-    include(
-        package=package,
-        dir    ="unsupported/Eigen",
-        relpath="unsupported/Eigen"
-    )
+    for file in iterate_dir("git/Eigen"):
+        Header(file).install()
+    for file in iterate_dir("git/unsupported/Eigen"):
+        Header(file).install()
+    Module("module/eigen.cpp").precompile().install()

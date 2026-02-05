@@ -2,7 +2,7 @@ from cppmakelib import *
 
 def build():
     cmake.build(
-        package=package,
+        source_dir="git"
         args=[
             "-DENABLE_WERROR=false",
            f"-DENABLE_DEBUG={config.type=='debug'}",
@@ -15,6 +15,7 @@ def build():
             "-DENABLE_SHARED_LIB=false"
         ]
     )
+    Module("module/bzip2.cpp").precompile().install()
 
 """
 >>> cat package/bzip2/git/CMakeOptions.txt | grep option

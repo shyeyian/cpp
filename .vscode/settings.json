@@ -3,5 +3,6 @@
         "--compile-commands-dir=binary/cache",
         "--header-insertion=never"
     ],
-    "cppsarif.sarifDirectory": "test"
+    "cppsarif.sarifDirectory": "test",
+    "python.languageServer": "None"
 }
